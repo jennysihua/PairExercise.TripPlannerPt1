@@ -5,8 +5,7 @@ mapboxgl.accessToken = 'pk.eyJ1IjoicndldG1vcmUzIiwiYSI6ImNqZ280ZDg5YjBqdWkzM255Z
 
 function mapMarkMaker(coordinatesArr) {
     const domEl = document.createElement('div') 
-    domEl.className ='marker';
-
+    domEl.className ='marker'
     new mapboxgl.Marker(domEl).setLngLat(coordinatesArr).addTo(map)
 }
 
@@ -17,5 +16,5 @@ const map = new mapboxgl.Map({
   style: "mapbox://styles/mapbox/streets-v10" // mapbox has lots of different map styles available.
 });
 
-mapMarkMaker([-87.641, 41.895])
+mapMarkMaker([-74.009151, 40.705086])
 console.log('Hello')
