@@ -100,7 +100,7 @@ eval("var g;\n\n// This works in non-strict mode\ng = (function() {\n\treturn th
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("console.log(\"Hello from JavaScript\");\nconst mapboxgl = __webpack_require__(/*! mapbox-gl */ \"./node_modules/mapbox-gl/dist/mapbox-gl.js\");\n\nmapboxgl.accessToken = 'pk.eyJ1IjoicndldG1vcmUzIiwiYSI6ImNqZ280ZDg5YjBqdWkzM255ZWJkZHlxZzQifQ.raAaz7h24n9OYwqLUZYWhg';\n\nconst map = new mapboxgl.Map({\n  container: \"map\",\n  center: [-74.009, 40.705], // FullStack NY coordinates; alternatively, use [-87.6354, 41.8885] for Chicago\n  zoom: 12, // starting zoom\n  style: \"mapbox://styles/mapbox/streets-v10\" // mapbox has lots of different map styles available.\n});\n\n\n//# sourceURL=webpack:///./src/index.js?");
+eval("console.log(\"Hello from JavaScript\");\nconst mapboxgl = __webpack_require__(/*! mapbox-gl */ \"./node_modules/mapbox-gl/dist/mapbox-gl.js\");\n\nmapboxgl.accessToken = 'pk.eyJ1IjoicndldG1vcmUzIiwiYSI6ImNqZ280ZDg5YjBqdWkzM255ZWJkZHlxZzQifQ.raAaz7h24n9OYwqLUZYWhg';\n\nfunction mapMarkMaker(coordinatesArr) {\n    const domEl = document.createElement('div') \n    domEl.className ='marker';\n\n    new mapboxgl.Marker(domEl).setLngLat(coordinatesArr).addTo(map)\n}\n\nconst map = new mapboxgl.Map({\n  container: \"map\",\n  center: [-74.009, 40.705], // FullStack NY coordinates; alternatively, use [-87.6354, 41.8885] for Chicago\n  zoom: 12, // starting zoom\n  style: \"mapbox://styles/mapbox/streets-v10\" // mapbox has lots of different map styles available.\n});\n\nmapMarkMaker([-87.641, 41.895])\nconsole.log('Hello')\n\n//# sourceURL=webpack:///./src/index.js?");
 
 /***/ })
 
