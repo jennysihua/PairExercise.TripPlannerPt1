@@ -14,7 +14,7 @@ body {
 }
 
 .activitymarker {
-  background-image: url('../src/activityMarker');
+  background-image: url('../src/activityMarker.png');
   background-size: cover;
   width: 50px;
   height: 50px;
@@ -23,7 +23,7 @@ body {
  }
 
  .restaurantmarker {
-  background-image: url('../src/restaurantMarker');
+  background-image: url('../src/restaurantMarker.png');
   background-size: cover;
   width: 50px;
   height: 50px;
@@ -32,7 +32,7 @@ body {
  }
 
  .hotelmarker {
-  background-image: url('../src/hotelMarker');
+  background-image: url('../src/hotelMarker.png');
   background-size: cover;
   width: 50px;
   height: 50px;
@@ -41,7 +41,7 @@ body {
  }
 
  .marker {
-  background-image: url('../src/hotelMarker');
+  background-image: url('../src/hotelMarker.png');
   background-size: cover;
   width: 50px;
   height: 50px;

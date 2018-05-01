@@ -1,5 +1,5 @@
 const mapboxgl = require("mapbox-gl");
-const mapMarkMaker = require("./marker.js")
+const mapMarkMaker = require("../src/marker")
 
 mapboxgl.accessToken = 'pk.eyJ1IjoicndldG1vcmUzIiwiYSI6ImNqZ280ZDg5YjBqdWkzM255ZWJkZHlxZzQifQ.raAaz7h24n9OYwqLUZYWhg';
 
@@ -10,7 +10,7 @@ const map = new mapboxgl.Map({
   style: "mapbox://styles/mapbox/streets-v10" // mapbox has lots of different map styles available.
 });
 
-mapMarkMaker([40.721219, -73.988855])
+mapMarkMaker('hotel',[-74.009151, 40.705086]).addTo(map)
 
 // mapMarkMaker('restaurant', [40.721219, -73.988855])
 // mapMarkMaker('hotel', [40.745768, -73.988274])

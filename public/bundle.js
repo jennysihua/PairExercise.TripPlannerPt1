@@ -100,7 +100,7 @@ eval("var g;\n\n// This works in non-strict mode\ng = (function() {\n\treturn th
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("const mapboxgl = __webpack_require__(/*! mapbox-gl */ \"./node_modules/mapbox-gl/dist/mapbox-gl.js\");\nconst mapMarkMaker = __webpack_require__(/*! ./marker.js */ \"./src/marker.js\")\n\nmapboxgl.accessToken = 'pk.eyJ1IjoicndldG1vcmUzIiwiYSI6ImNqZ280ZDg5YjBqdWkzM255ZWJkZHlxZzQifQ.raAaz7h24n9OYwqLUZYWhg';\n\nconst map = new mapboxgl.Map({\n  container: \"map\",\n  center: [-74.009, 40.705], // FullStack NY coordinates; alternatively, use [-87.6354, 41.8885] for Chicago\n  zoom: 12, // starting zoom\n  style: \"mapbox://styles/mapbox/streets-v10\" // mapbox has lots of different map styles available.\n});\n\nmapMarkMaker([40.721219, -73.988855])\n\n// mapMarkMaker('restaurant', [40.721219, -73.988855])\n// mapMarkMaker('hotel', [40.745768, -73.988274])\n\nconsole.log('Hello')\n\n\n//# sourceURL=webpack:///./src/index.js?");
+eval("const mapboxgl = __webpack_require__(/*! mapbox-gl */ \"./node_modules/mapbox-gl/dist/mapbox-gl.js\");\nconst mapMarkMaker = __webpack_require__(/*! ../src/marker */ \"./src/marker.js\")\n\nmapboxgl.accessToken = 'pk.eyJ1IjoicndldG1vcmUzIiwiYSI6ImNqZ280ZDg5YjBqdWkzM255ZWJkZHlxZzQifQ.raAaz7h24n9OYwqLUZYWhg';\n\nconst map = new mapboxgl.Map({\n  container: \"map\",\n  center: [-74.009, 40.705], // FullStack NY coordinates; alternatively, use [-87.6354, 41.8885] for Chicago\n  zoom: 12, // starting zoom\n  style: \"mapbox://styles/mapbox/streets-v10\" // mapbox has lots of different map styles available.\n});\n\nmapMarkMaker('hotel',[-74.009151, 40.705086]).addTo(map)\n\n// mapMarkMaker('restaurant', [40.721219, -73.988855])\n// mapMarkMaker('hotel', [40.745768, -73.988274])\n\nconsole.log('Hello')\n\n\n//# sourceURL=webpack:///./src/index.js?");
 
 /***/ }),
 
@@ -111,7 +111,7 @@ eval("const mapboxgl = __webpack_require__(/*! mapbox-gl */ \"./node_modules/map
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("const mapboxgl = __webpack_require__(/*! mapbox-gl */ \"./node_modules/mapbox-gl/dist/mapbox-gl.js\");\n\n// function mapMarkMaker(activity, coordinatesArr) {\n//   const domEl = document.createElement('div')\n//   if (activity === 'hotel') {\n//     domEl.className = 'hotelmarker'\n//   } else if (activity === 'restaurant') {\n//     domEl.className = 'restaurantmarker'\n//   } else {\n//     domEl.className = 'activitymarker'\n//   }\n//   new mapboxgl.Marker(domEl).setLngLat(coordinatesArr).addTo(map)\n// }\n\nfunction mapMarkMaker(coordinatesArr) {\n  const domEl = document.createElement('li')\n  domEl.className ='marker'\n  return new mapboxgl.Marker(domEl).setLngLat(coordinatesArr).addTo(map)\n}\n\nmodule.exports = mapMarkMaker\n\n\n//# sourceURL=webpack:///./src/marker.js?");
+eval("const mapboxgl = __webpack_require__(/*! mapbox-gl */ \"./node_modules/mapbox-gl/dist/mapbox-gl.js\");\n\nmodule.exports = function mapMarkMaker(activity, coordinatesArr) {\n  const domEl = document.createElement('div')\n  console.log('f')\n  if (activity === 'hotel') {\n    domEl.className = 'hotelmarker'\n  } else if (activity === 'restaurant') {\n    domEl.className = 'restaurantmarker'\n  } else {\n    domEl.className = 'activitymarker'\n  }\n  return new mapboxgl.Marker(domEl).setLngLat(coordinatesArr)\n}\n\n\n\n//# sourceURL=webpack:///./src/marker.js?");
 
 /***/ })
 
